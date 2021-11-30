@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <Todo :todos="todos"/>
+    <Todo :todos="todos" @todo-item-changed="Changed"/>
   </div>
 </template>
 
 <script>
-
 import Todo from './components/Todo.vue'
-
 export default {
   name: 'App',
   components: {
@@ -26,6 +24,11 @@ export default {
           title: 'Harmadik teendő'
         },
         ]
+    }
+  },
+  methods: {
+    Changed(e) {
+      console.log(e)
     }
   }
 }
