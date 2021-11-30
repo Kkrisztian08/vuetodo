@@ -1,5 +1,6 @@
 # Kovács Krisztián
 
+
 ## Hogyan kezdj neki?
 
 1. Jelentkezz be a GitHub szolgáltatásába a böngésződben és a VSCode szerkesztőben
