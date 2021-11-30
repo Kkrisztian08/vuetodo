@@ -5,7 +5,7 @@
         <button @click="Edit">Edit</button>
       </div>
       <div v-if="edit">
-        <input type="text">
+        <input type="text" v-model="title">
         <button @click="Save">Save</button>
       </div>
   </li>
@@ -16,7 +16,8 @@ export default {
     props: ['title'],
     data() {
     return {
-      edit:false,
+        text:this.title,
+        edit:false,
     }
   },
   methods:{
@@ -25,6 +26,10 @@ export default {
       },
       Save(){
           this.edit=false
+          this.emit('todo-item-changed',{
+              original:this.title,
+              new:this.text,
+          })
       }
   }
 }
